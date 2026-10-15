@@ -12,9 +12,13 @@ then deploys `dist/` on every push to `main`. No packages to install.
 | `public/` | Copied as-is: CSS/JS, logo, favicons, social image, `_headers`, `_redirects`, `robots.txt` |
 | `public/_redirects` | Old WordPress URLs, permanently redirected to their new pages |
 
-Phone, WhatsApp, email and the Band Pencil enquiry form link live in `LINKS` in `build.mjs`
-and are used in pages as `{{phone}}`, `{{whatsapp}}`, `{{bandPencil}}` and so on.
-Change them there once and every page updates.
+Phone, WhatsApp and email live in `LINKS` in `build.mjs` and are used in pages as `{{phone}}`,
+`{{whatsapp}}`, `{{email}}` and so on. Change them there once and every page updates.
+
+The enquiry form (`src/partials/enquiry-form.html`, placed in a page with `<!--@ENQUIRY_FORM-->`)
+has no server behind it: `site.js` turns the answers into a WhatsApp message or email that the
+visitor sends to James. The number and address are also set at the top of that script.
+Links like `/contact/?service=funeral#enquiry` pre-select the type of service.
 
 ## What the build does
 

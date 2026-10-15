@@ -1,0 +1,51 @@
+<form class="enquiry-form" id="enquiry-form" novalidate>
+  <div class="field-row">
+    <div class="field">
+      <label for="eq-name">Your name <span aria-hidden="true">*</span></label>
+      <input id="eq-name" name="name" type="text" autocomplete="name" required>
+    </div>
+    <div class="field">
+      <label for="eq-phone">Phone number <span aria-hidden="true">*</span></label>
+      <input id="eq-phone" name="phone" type="tel" autocomplete="tel" required>
+    </div>
+  </div>
+  <div class="field-row">
+    <div class="field">
+      <label for="eq-service">Type of service <span aria-hidden="true">*</span></label>
+      <select id="eq-service" name="service" required>
+        <option value="">Choose one</option>
+        <option value="wedding">Wedding</option>
+        <option value="funeral">Funeral</option>
+        <option value="memorial">Memorial service</option>
+        <option value="church">Church service or deputy cover</option>
+        <option value="concert">Concert, recital or accompaniment</option>
+        <option value="other">Something else</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="eq-date">Date <span aria-hidden="true">*</span></label>
+      <input id="eq-date" name="date" type="date" required>
+    </div>
+  </div>
+  <div class="field-row">
+    <div class="field">
+      <label for="eq-time">Start time</label>
+      <input id="eq-time" name="time" type="time">
+    </div>
+    <div class="field">
+      <label for="eq-venue">Venue and town <span aria-hidden="true">*</span></label>
+      <input id="eq-venue" name="venue" type="text" placeholder="e.g. St Peter's, Burnley" required>
+    </div>
+  </div>
+  <div class="field">
+    <label for="eq-message">Music or other details</label>
+    <textarea id="eq-message" name="message" rows="4" placeholder="Hymns, pieces you'd like, funeral director, anything else I should know"></textarea>
+  </div>
+  <p class="form-status" role="status" aria-live="polite" hidden></p>
+  <div class="form-actions">
+    <button class="btn btn--wa" type="submit" value="whatsapp">Send on WhatsApp</button>
+    <button class="btn btn--ghost" type="submit" value="email">Send by email</button>
+  </div>
+  <p class="form-note">Your details go straight to James in a WhatsApp message or email that you send yourself — nothing is stored on this website. Sending an enquiry doesn't commit you to anything.</p>
+  <noscript><p class="form-note">This form needs JavaScript. Please WhatsApp or call {{phone}}, or email {{email}}.</p></noscript>
+</form>

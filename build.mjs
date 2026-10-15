@@ -38,9 +38,6 @@ const LINKS = {
   whatsapp: "https://wa.me/447359670332",
   email: "jb@ukorganist.com",
   mailto: "mailto:jb@ukorganist.com",
-  // Band Pencil enquiry form (James's bookings system).
-  bandPencil:
-    "https://management.bandpencil.com/connect/enquiries/form.php?token=a36725691d0b4da78258b2bde3e407bb13f60c7fd0eb6407e4cf873454b71cbc&amp;rows=false&amp;labels=true",
   companyNo: "16955057",
 };
 
@@ -96,6 +93,7 @@ const layout = fs.readFileSync(p("src", "layout.html"), "utf8")
   .replace("/assets/site.js", `/assets/site.js?v=${stamp("site.js")}`);
 const partial = (name) => fill(fs.readFileSync(p("src", "partials", `${name}.html`), "utf8"));
 const header = partial("header");
+const enquiryForm = partial("enquiry-form");
 const footer = partial("footer").replace("{{year}}", String(new Date().getFullYear()));
 
 const BUSINESS_ID = `${SITE}/#business`;
@@ -197,7 +195,7 @@ function render({ urlPath, title, description, nav, noindex, crumb, service, bod
   return fill(layout)
     .replace("<!--@HEAD-->", head)
     .replace("<!--@HEADER-->", nav_)
-    .replace("<!--@MAIN-->", fill(body))
+    .replace("<!--@MAIN-->", fill(body).replace("<!--@ENQUIRY_FORM-->", enquiryForm))
     .replace("<!--@FOOTER-->", footer);
 }
 
@@ -258,7 +256,7 @@ const exists = (href) => {
   if (clean.endsWith("/")) return fs.existsSync(path.join(f, "index.html"));
   return fs.existsSync(f) && fs.statSync(f).isFile();
 };
-const BANNED = [/441204913708/, /\bTBC\b/i, /Lorem/i, /Tech Health/i, /\{\{/];
+const BANNED = [/441204913708/, /bandpencil/i, /\bTBC\b/i, /Lorem/i, /Tech Health/i, /\{\{/];
 for (const rel of listFiles(OUT, ".html")) {
   const html = fs.readFileSync(path.join(OUT, rel), "utf8").replace(/<!--[\s\S]*?-->/g, "");
   for (const m of html.matchAll(/(?:href|src)="(\/[^"]*)"/g)) {
