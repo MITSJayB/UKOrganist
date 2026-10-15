@@ -1,0 +1,24 @@
+# Old WordPress URLs, permanently redirected to their new pages.
+/about-us /about/ 301
+/about-us/ /about/ 301
+/news /services/ 301
+/news/ /services/ 301
+/blog-grid /services/ 301
+/blog-grid/ /services/ 301
+/2025/11/29/the-hidden-costs-of-ignoring-tech-health https://managedtech.uk/blog 301
+/2025/11/29/the-hidden-costs-of-ignoring-tech-health/ https://managedtech.uk/blog 301
+/category/* / 301
+/author/* /about/ 301
+/feed / 301
+/feed/ / 301
+/wp-sitemap.xml /sitemap.xml 301
+/sitemap_index.xml /sitemap.xml 301
+/wp-sitemap-* /sitemap.xml 301
+/wp-admin / 301
+/wp-admin/* / 301
+/wp-login.php / 301
+/wp-content/* / 301
+/booking /contact/ 301
+/booking/ /contact/ 301
+/book /contact/ 301
+/book/ /contact/ 301
