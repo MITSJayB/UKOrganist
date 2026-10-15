@@ -1,6 +1,6 @@
 # ukorganist.com
 
-Website for UK Organist — James Berry, wedding and funeral organist in Lancashire and Greater Manchester.
+Website for UK Organist — Jay Berry, wedding and funeral organist in Lancashire and Greater Manchester.
 Static site served by a Cloudflare Worker (static assets). Cloudflare runs `node build.mjs`
 then deploys `dist/` on every push to `main`. No packages to install.
 
@@ -18,7 +18,7 @@ Phone, WhatsApp and email live in `LINKS` in `build.mjs` and are used in pages a
 The enquiry form (`src/partials/enquiry-form.html`, placed in a page with `<!--@ENQUIRY_FORM-->`)
 posts each enquiry to a Google Apps Script web app in the jb@ukorganist.com account
 (`google-apps-script/Code.gs`, project "UKO Website Enquiries"). The script adds a row to the
-"UKO Enquiries" Google Sheet and emails James. Its /exec URL is `ENQUIRY_ENDPOINT` in
+"UKO Enquiries" Google Sheet and emails Jay. Its /exec URL is `ENQUIRY_ENDPOINT` in
 `public/assets/site.js`. "Send on WhatsApp" also opens a pre-filled WhatsApp message; if the
 script can't be reached, "Send enquiry" falls back to the visitor's email app.
 Links like `/contact/?service=funeral#enquiry` pre-select the type of service.

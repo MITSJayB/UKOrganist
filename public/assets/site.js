@@ -17,7 +17,7 @@
 })();
 
 // Enquiry form. Each enquiry is sent to the "UKO Website Enquiries" Google Apps
-// Script (logs it in the UKO Enquiries sheet and emails James). "Send on WhatsApp"
+// Script (logs it in the UKO Enquiries sheet and emails Jay). "Send on WhatsApp"
 // also opens a ready-written WhatsApp message; if the script can't be reached,
 // "Send enquiry" falls back to opening the visitor's email app.
 (function () {
@@ -65,7 +65,7 @@
     if (!bad && form.elements.email.value && !form.elements.email.checkValidity()) bad = form.elements.email;
     if (bad) {
       var label = form.querySelector('label[for="' + bad.id + '"]').firstChild.textContent.trim();
-      show(bad.type === "email" ? "Please check your email address." : label + " is needed so James can check the date.", "error");
+      show(bad.type === "email" ? "Please check your email address." : label + " is needed so Jay can check the date.", "error");
       bad.focus();
       return;
     }
@@ -73,7 +73,7 @@
     var when = new Date(v("date") + "T12:00:00").toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
     var type = service.options[service.selectedIndex].text;
     var lines = [
-      "Hi James, I'd like to check your availability.",
+      "Hi Jay, I'd like to check your availability.",
       "",
       "Service: " + type,
       "Date: " + when + (v("time") ? " at " + v("time") : ""),
@@ -91,7 +91,7 @@
       // only allow this inside the click).
       send("WhatsApp").catch(function () {});
       window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(text), "_blank", "noopener");
-      show("Thank you — James has your enquiry. WhatsApp should also have opened with your message ready; press send there if you'd like to chat.", "success");
+      show("Thank you — Jay has your enquiry. WhatsApp should also have opened with your message ready; press send there if you'd like to chat.", "success");
       return;
     }
 
@@ -100,7 +100,7 @@
     send("Website")
       .then(function () {
         form.reset();
-        show("Thank you — your enquiry has been sent. James will be in touch soon, usually by phone or WhatsApp.", "success");
+        show("Thank you — your enquiry has been sent. Jay will be in touch soon, usually by phone or WhatsApp.", "success");
       })
       .catch(function () {
         var subject = type + " enquiry – " + when;

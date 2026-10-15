@@ -3,7 +3,7 @@
  *
  * A standalone Apps Script project ("UKO Website Enquiries") in the jb@ukorganist.com
  * account, writing to the "UKO Enquiries" Google Sheet (SHEET_ID below). The website's enquiry form posts each enquiry here:
- * it is added as a row on the "Enquiries" tab and James gets an email alert.
+ * it is added as a row on the "Enquiries" tab and Jay gets an email alert.
  *
  * Deploy: Deploy > New deployment > Web app, Execute as "Me",
  * Who has access "Anyone". The /exec URL goes in ENQUIRY_ENDPOINT in site.js.

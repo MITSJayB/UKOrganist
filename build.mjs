@@ -41,7 +41,7 @@ const LINKS = {
   companyNo: "16955057",
 };
 
-// Where James travels to. Used in the LocalBusiness schema.
+// Where Jay travels to. Used in the LocalBusiness schema.
 const AREAS = [
   "Burnley", "Padiham", "Nelson", "Colne", "Pendle", "Accrington", "Rossendale", "Clitheroe",
   "Blackburn", "Darwen", "Bolton", "Bury", "Radcliffe", "Kearsley", "Rochdale", "Heywood",
@@ -101,9 +101,9 @@ const PERSON_ID = `${SITE}/#james-berry`;
 const businessLd = {
   "@type": ["LocalBusiness", "MusicGroup"],
   "@id": BUSINESS_ID,
-  name: "UK Organist – James Berry",
+  name: "UK Organist – Jay Berry",
   legalName: "UK Organist Limited",
-  alternateName: "James Berry, Organist",
+  alternateName: "Jay Berry, Organist",
   url: `${SITE}/`,
   logo: `${SITE}/assets/favicon-512.png`,
   image: `${SITE}/assets/og-default.png`,
@@ -128,7 +128,7 @@ const businessLd = {
 const personLd = {
   "@type": "Person",
   "@id": PERSON_ID,
-  name: "James Berry",
+  name: "Jay Berry",
   jobTitle: "Organist and Choir Master",
   worksFor: { "@id": BUSINESS_ID },
   affiliation: { "@type": "Church", name: "St John the Evangelist, Worsthorne" },
@@ -186,7 +186,7 @@ function render({ urlPath, title, description, nav, noindex, crumb, service, bod
     `<meta property="og:image" content="${SITE}/assets/og-default.png">`,
     `<meta property="og:image:width" content="1200">`,
     `<meta property="og:image:height" content="630">`,
-    `<meta property="og:image:alt" content="UK Organist – James Berry, wedding and funeral organist">`,
+    `<meta property="og:image:alt" content="UK Organist – Jay Berry, wedding and funeral organist">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="geo.region" content="GB-LAN">`,
     `<script type="application/ld+json">${JSON.stringify(pageLd({ urlPath, title, crumb, service, description, body })).replace(/</g, "\\u003c")}</script>`,
