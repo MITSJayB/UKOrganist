@@ -28,6 +28,7 @@ var SERVICES = {
 function setup() {
   var ss = book_();
   ss.rename("UKO Enquiries");
+  ss.setSpreadsheetTimeZone("Europe/London");
   var sh = ss.getSheetByName(SHEET) || ss.getSheets()[0].setName(SHEET);
   sh.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS])
     .setFontWeight("bold").setBackground("#16283a").setFontColor("#ffffff");
@@ -65,11 +66,21 @@ function doPost(e) {
     var sh = book_().getSheetByName(SHEET);
     var service = SERVICES[p.service] || clean_(p.service, 60) || "Other";
     var dateParts = String(p.date).split("-");
-    var serviceDate = dateParts.length === 3 ? new Date(+dateParts[0], +dateParts[1] - 1, +dateParts[2]) : clean_(p.date, 20);
-    sh.appendRow([
+    // Midday UTC keeps the calendar date right whatever time zone the script runs in.
+    var serviceDate = dateParts.length === 3
+      ? new Date(Date.UTC(+dateParts[0], +dateParts[1] - 1, +dateParts[2], 12)) : clean_(p.date, 20);
+    // First empty row in column A (appendRow would go below the pre-filled checkboxes).
+    var col = sh.getRange(2, 1, sh.getMaxRows() - 1, 1).getValues();
+    var free = col.findIndex(function (r) { return r[0] === ""; });
+    var row = free < 0 ? sh.getMaxRows() + 1 : free + 2;
+    if (row > sh.getMaxRows()) {
+      sh.insertRowsAfter(sh.getMaxRows(), 50);
+      sh.getRange(row, 13, 50, 2).insertCheckboxes();
+    }
+    sh.getRange(row, 1, 1, HEADERS.length).setValues([[
       new Date(), name, "'" + phone, clean_(p.email, 120), service, serviceDate, clean_(p.time, 10),
       clean_(p.venue, 200), clean_(p.message, 2000), clean_(p.channel, 20) || "Website", "New", "", false, false, "",
-    ]);
+    ]]);
   } finally {
     lock.releaseLock();
   }
