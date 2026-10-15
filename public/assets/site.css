@@ -222,3 +222,6 @@ ul, ol { padding-left: 1.2em; }
 .form-status { margin: 0; padding: 12px 14px; border-radius: 8px; font-weight: 600; }
 .form-status.is-error { background: #fbe9e7; color: #8a2a1c; }
 .form-status.is-success { background: #e7f4ec; color: #17562f; }
+.field .optional { color: var(--muted); font-weight: 400; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-status.is-info { background: var(--cream); color: var(--navy); }

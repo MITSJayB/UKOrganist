@@ -16,25 +16,28 @@
   });
 })();
 
-// Enquiry form: no server. On submit it builds a message from the fields and opens
-// WhatsApp (or the visitor's email app) with it ready to send to James.
+// Enquiry form. Each enquiry is sent to the "UKO Website Enquiries" Google Apps
+// Script (logs it in the UKO Enquiries sheet and emails James). "Send on WhatsApp"
+// also opens a ready-written WhatsApp message; if the script can't be reached,
+// "Send enquiry" falls back to opening the visitor's email app.
 (function () {
   var form = document.getElementById("enquiry-form");
   if (!form) return;
+  var ENQUIRY_ENDPOINT = ""; // Apps Script web app /exec URL
   var WA = "447359670332";
   var EMAIL = "jb@ukorganist.com";
   var status = form.querySelector(".form-status");
   var service = form.querySelector("#eq-service");
   var date = form.querySelector("#eq-date");
+  var buttons = form.querySelectorAll("button[type=submit]");
   var choice = "whatsapp";
 
-  // Pre-select the service from ?service=wedding etc. and stop past dates.
   var want = new URLSearchParams(location.search).get("service");
   if (want && service.querySelector('option[value="' + want + '"]')) service.value = want;
   var t = new Date();
   date.min = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
 
-  form.querySelectorAll("button[type=submit]").forEach(function (b) {
+  buttons.forEach(function (b) {
     b.addEventListener("click", function () { choice = b.value; });
   });
 
@@ -44,15 +47,25 @@
     status.className = "form-status is-" + kind;
   }
 
+  function send(channel) {
+    if (!ENQUIRY_ENDPOINT) return Promise.reject(new Error("no endpoint"));
+    var data = new URLSearchParams(new FormData(form));
+    data.set("channel", channel);
+    return fetch(ENQUIRY_ENDPOINT, { method: "POST", body: data, keepalive: true })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (!j.ok) throw new Error(j.error || "failed"); });
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     status.hidden = true;
     var bad = Array.prototype.find.call(form.elements, function (el) {
       return el.required && (el.value.trim() === "" || !el.checkValidity());
     });
+    if (!bad && form.elements.email.value && !form.elements.email.checkValidity()) bad = form.elements.email;
     if (bad) {
       var label = form.querySelector('label[for="' + bad.id + '"]').firstChild.textContent.trim();
-      show(label + " is needed so James can check the date.", "error");
+      show(bad.type === "email" ? "Please check your email address." : label + " is needed so James can check the date.", "error");
       bad.focus();
       return;
     }
@@ -68,17 +81,32 @@
       "Name: " + v("name"),
       "Phone: " + v("phone"),
     ];
+    if (v("email")) lines.push("Email: " + v("email"));
     if (v("message")) lines.push("", v("message"));
     lines.push("", "(Sent from ukorganist.com)");
     var text = lines.join("\n");
 
-    if (choice === "email") {
-      var subject = type + " enquiry – " + when;
-      location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(text);
-      show("Your email app should open with the message ready — just press send. If nothing opens, email " + EMAIL + " or WhatsApp 07359 670332.", "success");
-    } else {
+    if (choice === "whatsapp") {
+      // Log it in the background, and open WhatsApp straight away (popup blockers
+      // only allow this inside the click).
+      send("WhatsApp").catch(function () {});
       window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(text), "_blank", "noopener");
-      show("WhatsApp should open with your message ready — just press send. If it didn't open, message 07359 670332 or use “Send by email”.", "success");
+      show("Thank you — James has your enquiry. WhatsApp should also have opened with your message ready; press send there if you'd like to chat.", "success");
+      return;
     }
+
+    buttons.forEach(function (b) { b.disabled = true; });
+    show("Sending…", "info");
+    send("Website")
+      .then(function () {
+        form.reset();
+        show("Thank you — your enquiry has been sent. James will be in touch soon, usually by phone or WhatsApp.", "success");
+      })
+      .catch(function () {
+        var subject = type + " enquiry – " + when;
+        location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(text);
+        show("We couldn't send that automatically, so your email app should open with the message ready — just press send. Or WhatsApp 07359 670332.", "error");
+      })
+      .then(function () { buttons.forEach(function (b) { b.disabled = false; }); });
   });
 })();

@@ -16,8 +16,11 @@ Phone, WhatsApp and email live in `LINKS` in `build.mjs` and are used in pages a
 `{{whatsapp}}`, `{{email}}` and so on. Change them there once and every page updates.
 
 The enquiry form (`src/partials/enquiry-form.html`, placed in a page with `<!--@ENQUIRY_FORM-->`)
-has no server behind it: `site.js` turns the answers into a WhatsApp message or email that the
-visitor sends to James. The number and address are also set at the top of that script.
+posts each enquiry to a Google Apps Script web app in the jb@ukorganist.com account
+(`google-apps-script/Code.gs`, project "UKO Website Enquiries"). The script adds a row to the
+"UKO Enquiries" Google Sheet and emails James. Its /exec URL is `ENQUIRY_ENDPOINT` in
+`public/assets/site.js`. "Send on WhatsApp" also opens a pre-filled WhatsApp message; if the
+script can't be reached, "Send enquiry" falls back to the visitor's email app.
 Links like `/contact/?service=funeral#enquiry` pre-select the type of service.
 
 ## What the build does
