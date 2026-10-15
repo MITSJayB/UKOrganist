@@ -105,7 +105,7 @@ const businessLd = {
   legalName: "UK Organist Limited",
   alternateName: "Jay Berry, Organist",
   url: `${SITE}/`,
-  logo: `${SITE}/assets/favicon-512.png`,
+  logo: `${SITE}/assets/logo-emblem-1024.png`,
   image: `${SITE}/assets/og-default.png`,
   description:
     "Professional church organist for weddings, funerals, memorial services, concerts and choral services across Lancashire and Greater Manchester. Over 30 years' experience.",

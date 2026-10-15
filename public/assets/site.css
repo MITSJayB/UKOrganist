@@ -72,7 +72,7 @@ ul, ol { padding-left: 1.2em; }
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
 .site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 76px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand__mark { width: 44px; height: 44px; }
+.brand__mark { width: 52px; height: 52px; }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
 .brand__name { font: italic 600 1.65rem/1 var(--serif); color: var(--navy); }
 .brand__sub { font: 700 .7rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); margin-top: 5px; }
