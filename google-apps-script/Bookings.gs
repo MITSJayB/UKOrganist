@@ -99,7 +99,7 @@ function createBookingForRow(row) {
 
 function createBooking_(sh, row) {
   var v = sh.getRange(row, 1, 1, COL.calendar).getValues()[0];
-  if (v[COL.calendar - 1]) return; // already done
+  if (v[COL.calendar - 1]) { pushBookingToNotion_(sh, row); return; } // calendar done; make sure Notion has it
   var name = v[COL.name - 1], service = v[COL.service - 1] || "Booking", venue = v[COL.venue - 1];
   var date = v[COL.date - 1];
   if (!(date instanceof Date)) return;
@@ -146,6 +146,7 @@ function createBooking_(sh, row) {
     '=HYPERLINK("' + folder.getUrl() + '","Folder")',
     '=HYPERLINK("' + eventUrl + '","Event")',
   ]]);
+  pushBookingToNotion_(sh, row, { folder: folder.getUrl(), event: eventUrl }); // Notion.gs
 
   var when = Utilities.formatDate(date, "Europe/London", "EEEE d MMMM yyyy");
   MailApp.sendEmail(NOTIFY, "Booked: " + service + " – " + when + " – " + name, [
