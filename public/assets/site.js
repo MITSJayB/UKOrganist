@@ -25,7 +25,7 @@
   if (!form) return;
   var ENQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbxP6mw-dR38Zk1iTub7OEGnXwhRzoIgUuKeJxZCbIXjkyAiozOI6Q9Brz2eP0QUkpeh/exec"; // Apps Script web app
   var WA = "447359670332";
-  var EMAIL = "jb@ukorganist.com";
+  var EMAIL = "bookings@jamesrobert.co.uk";
   var status = form.querySelector(".form-status");
   var service = form.querySelector("#eq-service");
   var date = form.querySelector("#eq-date");

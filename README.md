@@ -18,7 +18,7 @@ Phone, WhatsApp and email live in `LINKS` in `build.mjs` and are used in pages a
 `{{whatsapp}}`, `{{email}}` and so on. Change them there once and every page updates.
 
 The enquiry form (`src/partials/enquiry-form.html`, placed in a page with `<!--@ENQUIRY_FORM-->`)
-posts each enquiry to a Google Apps Script web app in the jb@ukorganist.com account (to move to a jamesrobert.co.uk mailbox)
+posts each enquiry to a Google Apps Script web app in the music@jamesrobert.co.uk account (formerly jb@ukorganist.com)
 (`google-apps-script/Code.gs`, project "UKO Website Enquiries"). The script adds a row to the
 "UKO Enquiries" Google Sheet and emails James. Its /exec URL is `ENQUIRY_ENDPOINT` in
 `public/assets/site.js`. "Send on WhatsApp" also opens a pre-filled WhatsApp message; if the

@@ -1,6 +1,6 @@
 # James Robert Berry – Organist — Gmail templates
 
-Saved as Gmail templates in jb@ukorganist.com (Compose → ⋮ → Templates → Insert template).
+Saved as Gmail templates in music@jamesrobert.co.uk (Compose → ⋮ → Templates → Insert template).
 Replace the [square-bracket] parts before sending.
 
 ---
@@ -107,7 +107,7 @@ I'd be glad to be on your list of organists for services in [area]:
 - Invoices from James Robert Berry, ready to add to your account as a disbursement
 - No cancellation fee for funerals
 
-You can reach me on **07359 670332** (call or WhatsApp) or at jb@ukorganist.com. More details: https://jamesrobert.co.uk/funeral-directors/
+You can reach me on **07359 670332** (call or WhatsApp) or at music@jamesrobert.co.uk. More details: https://jamesrobert.co.uk/funeral-directors/
 
 With best wishes,
 James Robert Berry

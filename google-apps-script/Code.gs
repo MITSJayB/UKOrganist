@@ -1,7 +1,7 @@
 /**
  * James Robert Berry – Organist — website enquiry logger.
  *
- * A standalone Apps Script project ("UKO Website Enquiries") in the jb@ukorganist.com
+ * A standalone Apps Script project ("UKO Website Enquiries") in the music@jamesrobert.co.uk (formerly jb@ukorganist.com)
  * account, writing to the "UKO Enquiries" Google Sheet (SHEET_ID below). The website's enquiry form posts each enquiry here:
  * it is added as a row on the "Enquiries" tab and Jay gets an email alert.
  *
@@ -10,7 +10,7 @@
  * After editing this file: Deploy > Manage deployments > edit > New version.
  */
 
-var NOTIFY = "jb@ukorganist.com";
+var NOTIFY = "music@jamesrobert.co.uk";
 var SHEET_ID = "1Eg7IehHSawSS_tZqzYspQ_zP-YoYfQwXHYjzb7OX3M4";
 function book_() { return SpreadsheetApp.openById(SHEET_ID); }
 var SHEET = "Enquiries";

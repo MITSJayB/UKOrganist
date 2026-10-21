@@ -1,7 +1,7 @@
 /**
  * James Robert Berry – Organist — bookings toolkit (second file in the "UKO Website Enquiries" project).
  *
- * Run setupBookings() once from the editor. It creates, in jb@ukorganist.com:
+ * Run setupBookings() once from the editor. It creates, in music@jamesrobert.co.uk (formerly jb@ukorganist.com):
  *   - a "UKO Bookings" Google Calendar, with Sunday mornings blocked as busy (St John's, Worsthorne)
  *   - a "UKO Bookings" Drive folder (one sub-folder per booking is added automatically)
  *   - two music-planning Google Forms (wedding and funeral) whose answers land in new tabs
@@ -163,7 +163,7 @@ function weddingForm_() {
   var f = FormApp.create("James Robert Berry – Wedding music planner");
   f.setDescription("Thank you for booking James Robert Berry for your wedding. Please fill this in at least 14 days " +
     "before the ceremony so the music can be prepared. Not sure about something? Leave it blank or choose " +
-    "\"Please suggest\" and James will help. Questions: WhatsApp 07359 670332 or email jb@ukorganist.com.");
+    "\"Please suggest\" and James will help. Questions: WhatsApp 07359 670332 or email bookings@jamesrobert.co.uk.");
   f.setCollectEmail(false).setAllowResponseEdits(true).setLimitOneResponsePerUser(false);
   f.addTextItem().setTitle("Your names").setRequired(true);
   f.addTextItem().setTitle("Your email address").setRequired(true);

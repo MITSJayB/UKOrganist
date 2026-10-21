@@ -36,12 +36,12 @@ const LINKS = {
   phone: "07359 670332",
   tel: "tel:+447359670332",
   whatsapp: "https://wa.me/447359670332",
-  // Still the old mailbox until a jamesrobert.co.uk address exists. Change both lines (and
-  // EMAIL in public/assets/site.js) once it does, e.g. james@jamesrobert.co.uk.
-  email: "jb@ukorganist.com",
-  mailto: "mailto:jb@ukorganist.com",
+  // Public address for enquiries and forms. bookings@ and dp@ are aliases of James's
+  // music@jamesrobert.co.uk mailbox. Keep EMAIL in public/assets/site.js the same.
+  email: "bookings@jamesrobert.co.uk",
+  mailto: "mailto:bookings@jamesrobert.co.uk",
   // Address for privacy / data requests.
-  dpEmail: "dp@ukorganist.com",
+  dpEmail: "dp@jamesrobert.co.uk",
 };
 
 // Where Jay travels to. Used in the LocalBusiness schema.
