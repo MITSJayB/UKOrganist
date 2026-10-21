@@ -16,4 +16,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://ukorganist.com/sitemap.xml
+Sitemap: https://jamesrobert.co.uk/sitemap.xml

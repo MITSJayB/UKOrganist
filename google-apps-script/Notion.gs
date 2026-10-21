@@ -1,5 +1,5 @@
 /**
- * UK Organist — copy bookings into the Notion CRM (third file in "UKO Website Enquiries").
+ * James Robert Berry – Organist — copy bookings into the Notion CRM (third file in "UKO Website Enquiries").
  *
  * When a row on the Enquiries tab is set to "Booked", createBooking_() (Bookings.gs) calls
  * pushBookingToNotion_() after making the calendar event and Drive folder. A page is added to

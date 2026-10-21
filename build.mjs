@@ -25,8 +25,8 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 
-const SITE = "https://ukorganist.com";
-const BRAND = "UK Organist";
+const SITE = "https://jamesrobert.co.uk";
+const BRAND = "James Robert Berry – Organist";
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const OUT = path.join(ROOT, "dist");
 const p = (...parts) => path.join(ROOT, ...parts);
@@ -36,9 +36,12 @@ const LINKS = {
   phone: "07359 670332",
   tel: "tel:+447359670332",
   whatsapp: "https://wa.me/447359670332",
+  // Still the old mailbox until a jamesrobert.co.uk address exists. Change both lines (and
+  // EMAIL in public/assets/site.js) once it does, e.g. james@jamesrobert.co.uk.
   email: "jb@ukorganist.com",
   mailto: "mailto:jb@ukorganist.com",
-  companyNo: "16955057",
+  // Address for privacy / data requests.
+  dpEmail: "dp@ukorganist.com",
 };
 
 // Where Jay travels to. Used in the LocalBusiness schema.
@@ -97,15 +100,14 @@ const enquiryForm = partial("enquiry-form");
 const footer = partial("footer").replace("{{year}}", String(new Date().getFullYear()));
 
 const BUSINESS_ID = `${SITE}/#business`;
-const PERSON_ID = `${SITE}/#james-berry`;
+const PERSON_ID = `${SITE}/#james-robert-berry`;
 const businessLd = {
   "@type": ["LocalBusiness", "MusicGroup"],
   "@id": BUSINESS_ID,
-  name: "UK Organist – Jay Berry",
-  legalName: "UK Organist Limited",
-  alternateName: "Jay Berry, Organist",
+  name: "James Robert Berry – Organist",
+  alternateName: ["James Berry, Organist", "Organist James"],
   url: `${SITE}/`,
-  logo: `${SITE}/assets/logo-emblem-1024.png`,
+  logo: `${SITE}/assets/logo-monogram-1024.png`,
   image: `${SITE}/assets/og-default.png`,
   description:
     "Professional church organist for weddings, funerals, memorial services, concerts and choral services across Lancashire and Greater Manchester. Over 30 years' experience.",
@@ -128,7 +130,8 @@ const businessLd = {
 const personLd = {
   "@type": "Person",
   "@id": PERSON_ID,
-  name: "Jay Berry",
+  name: "James Robert Berry",
+  alternateName: "James Berry",
   jobTitle: "Organist and Choir Master",
   worksFor: { "@id": BUSINESS_ID },
   affiliation: { "@type": "Church", name: "St John the Evangelist, Worsthorne" },
@@ -186,7 +189,7 @@ function render({ urlPath, title, description, nav, noindex, crumb, service, bod
     `<meta property="og:image" content="${SITE}/assets/og-default.png">`,
     `<meta property="og:image:width" content="1200">`,
     `<meta property="og:image:height" content="630">`,
-    `<meta property="og:image:alt" content="UK Organist – Jay Berry, wedding and funeral organist">`,
+    `<meta property="og:image:alt" content="James Robert Berry – wedding and funeral organist">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="geo.region" content="GB-LAN">`,
     `<script type="application/ld+json">${JSON.stringify(pageLd({ urlPath, title, crumb, service, description, body })).replace(/</g, "\\u003c")}</script>`,
@@ -256,7 +259,8 @@ const exists = (href) => {
   if (clean.endsWith("/")) return fs.existsSync(path.join(f, "index.html"));
   return fs.existsSync(f) && fs.statSync(f).isFile();
 };
-const BANNED = [/441204913708/, /bandpencil/i, /\bTBC\b/i, /Lorem/i, /Tech Health/i, /\{\{/];
+// Old trading name and company details must not come back now the business is a sole trader.
+const BANNED = [/441204913708/, /bandpencil/i, /\bTBC\b/i, /Lorem/i, /Tech Health/i, /\{\{/, /UK Organist/i, /Organist Limited/i, /company number/i, /16955057/, /\bJay Berry\b/];
 for (const rel of listFiles(OUT, ".html")) {
   const html = fs.readFileSync(path.join(OUT, rel), "utf8").replace(/<!--[\s\S]*?-->/g, "");
   for (const m of html.matchAll(/(?:href|src)="(\/[^"]*)"/g)) {

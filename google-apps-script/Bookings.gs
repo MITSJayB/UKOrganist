@@ -1,5 +1,5 @@
 /**
- * UK Organist — bookings toolkit (second file in the "UKO Website Enquiries" project).
+ * James Robert Berry – Organist — bookings toolkit (second file in the "UKO Website Enquiries" project).
  *
  * Run setupBookings() once from the editor. It creates, in jb@ukorganist.com:
  *   - a "UKO Bookings" Google Calendar, with Sunday mornings blocked as busy (St John's, Worsthorne)
@@ -160,10 +160,10 @@ function createBooking_(sh, row) {
 // ------------------------------------------------------------ music forms
 
 function weddingForm_() {
-  var f = FormApp.create("UK Organist – Wedding music planner");
-  f.setDescription("Thank you for booking Jay Berry for your wedding. Please fill this in at least 14 days " +
+  var f = FormApp.create("James Robert Berry – Wedding music planner");
+  f.setDescription("Thank you for booking James Robert Berry for your wedding. Please fill this in at least 14 days " +
     "before the ceremony so the music can be prepared. Not sure about something? Leave it blank or choose " +
-    "\"Please suggest\" and Jay will help. Questions: WhatsApp 07359 670332 or email jb@ukorganist.com.");
+    "\"Please suggest\" and James will help. Questions: WhatsApp 07359 670332 or email jb@ukorganist.com.");
   f.setCollectEmail(false).setAllowResponseEdits(true).setLimitOneResponsePerUser(false);
   f.addTextItem().setTitle("Your names").setRequired(true);
   f.addTextItem().setTitle("Your email address").setRequired(true);
@@ -174,7 +174,7 @@ function weddingForm_() {
   f.addTextItem().setTitle("Minister or vicar taking the service").setHelpText("Name, and a phone number or email if you have one.");
   f.addSectionHeaderItem().setTitle("Music").setHelpText("Pick from the list or choose Other and type your own.");
   var pre = f.addMultipleChoiceItem().setTitle("Music while guests arrive");
-  pre.setChoices([pre.createChoice("Classical and light organ music (Jay's choice)"), pre.createChoice("A list of our favourites (tell us below)")]).showOtherOption(true);
+  pre.setChoices([pre.createChoice("Classical and light organ music (James's choice)"), pre.createChoice("A list of our favourites (tell us below)")]).showOtherOption(true);
   var entrance = f.addMultipleChoiceItem().setTitle("Entrance music").setRequired(true);
   entrance.setChoices(["Bridal Chorus – Wagner", "Trumpet Voluntary (Prince of Denmark's March) – Clarke",
     "Arrival of the Queen of Sheba – Handel", "Canon in D – Pachelbel", "Trumpet Tune – Purcell", "Please suggest"]
@@ -191,17 +191,17 @@ function weddingForm_() {
   var film = f.addMultipleChoiceItem().setTitle("Will the ceremony be filmed or live-streamed?").setRequired(true);
   film.setHelpText("A recording fee (normally 50% of the performance fee) applies to professional filming or live-streaming, in line with UK performance rights.");
   film.setChoices(["No", "Guests' phones only", "Professionally filmed", "Live-streamed"].map(function (c) { return film.createChoice(c); }));
-  f.addParagraphTextItem().setTitle("Anything else Jay should know?").setHelpText("Links to recordings of special pieces, timings, cues, order of service changes…");
-  f.setConfirmationMessage("Thank you — Jay has your music choices and will be in touch if anything needs checking.");
+  f.addParagraphTextItem().setTitle("Anything else James should know?").setHelpText("Links to recordings of special pieces, timings, cues, order of service changes…");
+  f.setConfirmationMessage("Thank you — James has your music choices and will be in touch if anything needs checking.");
   f.setDestination(FormApp.DestinationType.SPREADSHEET, SHEET_ID);
   renameResponseTab_(f, "Wedding music");
   return f;
 }
 
 function funeralForm_() {
-  var f = FormApp.create("UK Organist – Funeral music planner");
-  f.setDescription("Thank you for asking Jay Berry to play. This form helps plan the music for the service. " +
-    "Answer whatever you can; if you're unsure, choose \"Please suggest\" and Jay will help. For anything " +
+  var f = FormApp.create("James Robert Berry – Funeral music planner");
+  f.setDescription("Thank you for asking James Robert Berry to play. This form helps plan the music for the service. " +
+    "Answer whatever you can; if you're unsure, choose \"Please suggest\" and James will help. For anything " +
     "urgent, call or WhatsApp 07359 670332.");
   f.setCollectEmail(false).setAllowResponseEdits(true);
   f.addTextItem().setTitle("Your name").setRequired(true);
@@ -217,15 +217,15 @@ function funeralForm_() {
   f.addTextItem().setTitle("Minister or celebrant");
   f.addSectionHeaderItem().setTitle("Music");
   var arrive = f.addMultipleChoiceItem().setTitle("Music as people arrive");
-  arrive.setChoices(["Quiet reflective organ music (Jay's choice)", "Please suggest"].map(function (c) { return arrive.createChoice(c); })).showOtherOption(true);
+  arrive.setChoices(["Quiet reflective organ music (James's choice)", "Please suggest"].map(function (c) { return arrive.createChoice(c); })).showOtherOption(true);
   f.addParagraphTextItem().setTitle("Hymns").setHelpText("In order. For example: The Lord's My Shepherd (Crimond), Abide With Me, How Great Thou Art.");
   f.addParagraphTextItem().setTitle("Music for reflection or the committal").setHelpText("A favourite song or piece? Add a link to a recording if you can.");
   var close = f.addMultipleChoiceItem().setTitle("Music at the end of the service");
   close.setChoices(["Nimrod – Elgar", "Largo – Handel", "Air on the G String – Bach", "Please suggest"].map(function (c) { return close.createChoice(c); })).showOtherOption(true);
   var stream = f.addMultipleChoiceItem().setTitle("Will the service be live-streamed or recorded?");
   stream.setChoices(["No", "Yes", "Not sure"].map(function (c) { return stream.createChoice(c); }));
-  f.addParagraphTextItem().setTitle("Anything else Jay should know?");
-  f.setConfirmationMessage("Thank you. Jay has the details and will be in touch if anything needs checking.");
+  f.addParagraphTextItem().setTitle("Anything else James should know?");
+  f.setConfirmationMessage("Thank you. James has the details and will be in touch if anything needs checking.");
   f.setDestination(FormApp.DestinationType.SPREADSHEET, SHEET_ID);
   renameResponseTab_(f, "Funeral music");
   return f;

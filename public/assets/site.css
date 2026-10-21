@@ -1,4 +1,4 @@
-/* UK Organist — site styles. Navy and gold, after the original UK Organist branding. */
+/* James Robert Berry – Organist — site styles. Navy and gold, name-led wordmark. */
 :root {
   --navy: #16283a;
   --navy-2: #1f3a52;
@@ -72,10 +72,10 @@ ul, ol { padding-left: 1.2em; }
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
 .site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 76px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand__mark { width: 52px; height: 52px; }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
-.brand__name { font: italic 600 1.65rem/1 var(--serif); color: var(--navy); }
-.brand__sub { font: 700 .7rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); margin-top: 5px; }
+.brand__name { font: 600 1.75rem/1 var(--serif); letter-spacing: .01em; color: var(--navy); white-space: nowrap; }
+.brand__sub { font: 700 .7rem/1 var(--sans); letter-spacing: .32em; text-transform: uppercase; color: var(--gold-deep); margin-top: 6px; }
+@media (max-width: 420px) { .brand__name { font-size: 1.4rem; } .brand__sub { letter-spacing: .26em; } }
 .site-nav { display: flex; align-items: center; gap: 22px; }
 .site-nav__list { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
 .site-nav__list a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: .98rem; padding: 6px 0; border-bottom: 2px solid transparent; }
@@ -191,8 +191,8 @@ ul, ol { padding-left: 1.2em; }
 .site-footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
 .site-footer li { margin-bottom: 8px; }
-.site-footer__brand { font: italic 600 1.7rem/1 var(--serif); color: #fff; }
-.site-footer__brand span { display: block; font: 700 .7rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-top: 6px; font-style: normal; }
+.site-footer__brand { font: 600 1.75rem/1 var(--serif); color: #fff; }
+.site-footer__brand span { display: block; font: 700 .7rem/1 var(--sans); letter-spacing: .32em; text-transform: uppercase; color: var(--gold); margin-top: 8px; font-style: normal; }
 .site-footer__head { font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .1em; font-size: .8rem; }
 .site-footer__legal { border-top: 1px solid rgba(255,255,255,.12); margin-top: 36px; padding-top: 20px; font-size: .85rem; }
 @media (max-width: 900px) { .site-footer__grid { grid-template-columns: 1fr 1fr; } }

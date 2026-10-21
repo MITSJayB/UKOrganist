@@ -1,5 +1,5 @@
 /**
- * UK Organist — website enquiry logger.
+ * James Robert Berry – Organist — website enquiry logger.
  *
  * A standalone Apps Script project ("UKO Website Enquiries") in the jb@ukorganist.com
  * account, writing to the "UKO Enquiries" Google Sheet (SHEET_ID below). The website's enquiry form posts each enquiry here:
@@ -88,7 +88,7 @@ function doPost(e) {
   var when = serviceDate instanceof Date
     ? Utilities.formatDate(serviceDate, "Europe/London", "EEEE d MMMM yyyy") : serviceDate;
   var body = [
-    "New enquiry from ukorganist.com",
+    "New website enquiry",
     "",
     "Service: " + service,
     "Date: " + when + (p.time ? " at " + clean_(p.time, 10) : ""),
@@ -110,7 +110,7 @@ function doPost(e) {
 }
 
 function doGet() {
-  return ContentService.createTextOutput("UK Organist enquiry endpoint is running.");
+  return ContentService.createTextOutput("James Robert Berry – Organist enquiry endpoint is running.");
 }
 
 function clean_(v, max) {

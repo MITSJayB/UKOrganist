@@ -1,4 +1,4 @@
-# UK Organist — Gmail templates
+# James Robert Berry – Organist — Gmail templates
 
 Saved as Gmail templates in jb@ukorganist.com (Compose → ⋮ → Templates → Insert template).
 Replace the [square-bracket] parts before sending.
@@ -21,12 +21,12 @@ A few things to know:
 - [Weddings and concerts:] A deposit of £[deposit] secures the date, with the balance due 7 days before.
 - [Funerals:] Payment is due before or on the day of the service, and there's no cancellation fee.
 
-Full details are in my terms of booking: https://ukorganist.com/terms-conditions-of-booking/
+Full details are in my terms of booking: https://jamesrobert.co.uk/terms-conditions-of-booking/
 
 If you'd like to go ahead, just reply to this email and I'll send your booking confirmation.
 
 Kind regards,
-Jay
+James
 
 ---
 
@@ -52,7 +52,7 @@ Thank you — I'm delighted to confirm that I'll be playing for your [service].
 If anything changes, or you'd like to talk through the music, just call or WhatsApp 07359 670332.
 
 Kind regards,
-Jay
+James
 
 ---
 
@@ -70,7 +70,7 @@ If you haven't already, please fill in the music form here:
 Not sure about something? Choose "Please suggest" on the form, or give me a call on 07359 670332 and we can talk it through.
 
 Kind regards,
-Jay
+James
 
 ---
 
@@ -87,7 +87,7 @@ You can pay by bank transfer or card, using the details and link on your invoice
 I'm looking forward to playing for you.
 
 Kind regards,
-Jay
+James
 
 ---
 
@@ -97,18 +97,18 @@ Jay
 
 Dear [name],
 
-I'm Jay Berry, a professional church organist covering Lancashire and Greater Manchester. I've played for funerals since 1993 and have been Organist and Choir Master at St John the Evangelist, Worsthorne, since 2007.
+I'm James Robert Berry, a professional church organist covering Lancashire and Greater Manchester. I've played for funerals since 1993 and have been Organist and Choir Master at St John the Evangelist, Worsthorne, since 2007.
 
 I'd be glad to be on your list of organists for services in [area]:
 - Midweek availability, mornings and afternoons, plus Saturdays
 - Short notice welcome — call or WhatsApp and I'll confirm straight back
 - I'll liaise with the family and minister about hymns and music if that helps you
 - At the console 45 minutes before the service
-- Invoices from UK Organist Limited, ready to add to your account as a disbursement
+- Invoices from James Robert Berry, ready to add to your account as a disbursement
 - No cancellation fee for funerals
 
-You can reach me on **07359 670332** (call or WhatsApp) or at jb@ukorganist.com. More details: https://ukorganist.com/funeral-directors/
+You can reach me on **07359 670332** (call or WhatsApp) or at jb@ukorganist.com. More details: https://jamesrobert.co.uk/funeral-directors/
 
 With best wishes,
-Jay Berry
-UK Organist
+James Robert Berry
+Organist

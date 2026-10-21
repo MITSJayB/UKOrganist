@@ -1,10 +1,17 @@
 // Cloudflare deploy config: serves the built static site from dist/.
 // Cloudflare runs `node build.mjs` then `npx wrangler deploy` on every push to main.
+// The Worker keeps the name "ukorganist" so the existing Cloudflare build connection still
+// matches; the name isn't visible to visitors.
 {
   "name": "ukorganist",
+  "main": "worker/index.js",
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
+    // Every request goes through worker/index.js first, so other domains can be redirected
+    // to jamesrobert.co.uk before any page is served.
+    "run_worker_first": true,
     // /weddings serves weddings/index.html; unknown URLs get dist/404.html with a 404 status.
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
