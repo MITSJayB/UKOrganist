@@ -1,5 +1,5 @@
-// Sends every other domain pointed at this Worker (ukorganist.com, jamesrobert.uk,
-// organistjames.co.uk and any www. version) to https://jamesrobert.co.uk with the same
+// Sends every other domain pointed at this Worker (jamesrobert.uk, organistjames.co.uk,
+// organistjames.uk, ukorganist.com, ukorganist.co.uk and any www. version) to https://jamesrobert.co.uk with the same
 // path and query, as a permanent 301. Requests on jamesrobert.co.uk itself are served from
 // the built site in dist/ as normal (public/_redirects still handles old WordPress URLs).
 // workers.dev and local addresses are left alone so previews keep working.

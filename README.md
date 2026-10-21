@@ -12,7 +12,7 @@ then deploys `dist/` on every push to `main`. No packages to install.
 | `src/partials/` | Header and footer. `src/layout.html` is the page shell. |
 | `public/` | Copied as-is: CSS/JS, logo, favicons, social image, `_headers`, `_redirects`, `robots.txt` |
 | `public/_redirects` | Old WordPress URLs, permanently redirected to their new pages |
-| `worker/index.js` | Redirects every other domain (ukorganist.com, jamesrobert.uk, organistjames.co.uk, www.) to jamesrobert.co.uk, same path |
+| `worker/index.js` | Redirects every other domain (jamesrobert.uk, organistjames.co.uk/.uk, ukorganist.com/.co.uk, www.) to jamesrobert.co.uk, same path |
 
 Phone, WhatsApp and email live in `LINKS` in `build.mjs` and are used in pages as `{{phone}}`,
 `{{whatsapp}}`, `{{email}}` and so on. Change them there once and every page updates.
@@ -44,10 +44,11 @@ then link to it from `src/pages/areas.html` and the footer.
 
 ## Domains
 
-jamesrobert.co.uk is the only address the site answers on. Add ukorganist.com, jamesrobert.uk and
-organistjames.co.uk (and their www. versions) as custom domains on the same Worker in Cloudflare;
+jamesrobert.co.uk is the only address the site answers on. Add jamesrobert.uk, organistjames.co.uk,
+organistjames.uk, ukorganist.com and ukorganist.co.uk (and their www. versions) as custom domains
+on the same Worker in Cloudflare;
 `worker/index.js` sends them all to the matching page on jamesrobert.co.uk with a 301.
-Keep ukorganist.com renewed for a few years so old links and search history carry across.
+Keep ukorganist.com and ukorganist.co.uk renewed for a few years so old links and search history carry across.
 
 The build fails if the old trading name, "Limited", the company number or "Jay Berry" appear
 anywhere on the public site.
