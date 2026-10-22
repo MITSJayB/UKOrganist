@@ -49,7 +49,7 @@ Thank you — I'm delighted to confirm that I'll be playing for your [service].
 [Weddings:] Music and hymn choices need to be with me by [date – 14 days before].
 [Funerals:] If you can let me have the music choices at least 48 hours before the service, that's perfect.
 
-If anything changes, or you'd like to talk through the music, just call or WhatsApp 07359 670332.
+If anything changes, or you'd like to talk through the music, just call or WhatsApp 07408 637432.
 
 Kind regards,
 James
@@ -67,7 +67,7 @@ I hope the wedding plans are going well! Your wedding is two weeks away, so this
 If you haven't already, please fill in the music form here:
 [music form link]
 
-Not sure about something? Choose "Please suggest" on the form, or give me a call on 07359 670332 and we can talk it through.
+Not sure about something? Choose "Please suggest" on the form, or give me a call on 07408 637432 and we can talk it through.
 
 Kind regards,
 James
@@ -107,7 +107,7 @@ I'd be glad to be on your list of organists for services in [area]:
 - Invoices from James Robert Berry, ready to add to your account as a disbursement
 - No cancellation fee for funerals
 
-You can reach me on **07359 670332** (call or WhatsApp) or at music@jamesrobert.co.uk. More details: https://jamesrobert.co.uk/funeral-directors/
+You can reach me on **07408 637432** (call or WhatsApp) or at music@jamesrobert.co.uk. More details: https://jamesrobert.co.uk/funeral-directors/
 
 With best wishes,
 James Robert Berry

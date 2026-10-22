@@ -33,9 +33,9 @@ const p = (...parts) => path.join(ROOT, ...parts);
 
 // Shared details, available in pages and partials as {{name}}.
 const LINKS = {
-  phone: "07359 670332",
-  tel: "tel:+447359670332",
-  whatsapp: "https://wa.me/447359670332",
+  phone: "07408 637432",
+  tel: "tel:+447408637432",
+  whatsapp: "https://wa.me/447408637432",
   // Public address for enquiries and forms. bookings@ and dp@ are aliases of James's
   // music@jamesrobert.co.uk mailbox. Keep EMAIL in public/assets/site.js the same.
   email: "bookings@jamesrobert.co.uk",
@@ -111,7 +111,7 @@ const businessLd = {
   image: `${SITE}/assets/og-default.png`,
   description:
     "Professional church organist for weddings, funerals, memorial services, concerts and choral services across Lancashire and Greater Manchester. Over 30 years' experience.",
-  telephone: "+447359670332",
+  telephone: "+447408637432",
   email: LINKS.email,
   address: { "@type": "PostalAddress", addressRegion: "Lancashire", addressCountry: "GB" },
   areaServed: AREAS.map((name) => ({ "@type": "Place", name })),
@@ -121,7 +121,7 @@ const businessLd = {
   knowsAbout: ["Wedding music", "Funeral music", "Hymn accompaniment", "Choral Evensong", "Pipe organ"],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+447359670332",
+    telephone: "+447408637432",
     contactType: "bookings",
     areaServed: "GB",
     availableLanguage: "English",

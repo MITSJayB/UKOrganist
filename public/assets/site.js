@@ -24,7 +24,7 @@
   var form = document.getElementById("enquiry-form");
   if (!form) return;
   var ENQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbxP6mw-dR38Zk1iTub7OEGnXwhRzoIgUuKeJxZCbIXjkyAiozOI6Q9Brz2eP0QUkpeh/exec"; // Apps Script web app
-  var WA = "447359670332";
+  var WA = "447408637432";
   var EMAIL = "bookings@jamesrobert.co.uk";
   var status = form.querySelector(".form-status");
   var service = form.querySelector("#eq-service");
@@ -105,7 +105,7 @@
       .catch(function () {
         var subject = type + " enquiry – " + when;
         location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(text);
-        show("We couldn't send that automatically, so your email app should open with the message ready — just press send. Or WhatsApp 07359 670332.", "error");
+        show("We couldn't send that automatically, so your email app should open with the message ready — just press send. Or WhatsApp 07408 637432.", "error");
       })
       .then(function () { buttons.forEach(function (b) { b.disabled = false; }); });
   });

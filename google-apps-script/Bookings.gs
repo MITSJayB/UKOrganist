@@ -163,7 +163,7 @@ function weddingForm_() {
   var f = FormApp.create("James Robert Berry – Wedding music planner");
   f.setDescription("Thank you for booking James Robert Berry for your wedding. Please fill this in at least 14 days " +
     "before the ceremony so the music can be prepared. Not sure about something? Leave it blank or choose " +
-    "\"Please suggest\" and James will help. Questions: WhatsApp 07359 670332 or email bookings@jamesrobert.co.uk.");
+    "\"Please suggest\" and James will help. Questions: WhatsApp 07408 637432 or email bookings@jamesrobert.co.uk.");
   f.setCollectEmail(false).setAllowResponseEdits(true).setLimitOneResponsePerUser(false);
   f.addTextItem().setTitle("Your names").setRequired(true);
   f.addTextItem().setTitle("Your email address").setRequired(true);
@@ -202,7 +202,7 @@ function funeralForm_() {
   var f = FormApp.create("James Robert Berry – Funeral music planner");
   f.setDescription("Thank you for asking James Robert Berry to play. This form helps plan the music for the service. " +
     "Answer whatever you can; if you're unsure, choose \"Please suggest\" and James will help. For anything " +
-    "urgent, call or WhatsApp 07359 670332.");
+    "urgent, call or WhatsApp 07408 637432.");
   f.setCollectEmail(false).setAllowResponseEdits(true);
   f.addTextItem().setTitle("Your name").setRequired(true);
   var who = f.addMultipleChoiceItem().setTitle("You are…").setRequired(true);
